@@ -71,7 +71,7 @@ PRIVATE: 'private';
 // keywords end here
 
 // identifiers
-fragment NAMESPACE: (IDENT '::')*;
+fragment NAMESPACE: (IDENT DOUBLE_COLON)*;
 fragment IDENT: ('_' | LETTER)(LETTER | DECIMAL_DIGIT | '_')*;
 
 fragment LETTER: [A-Za-z];

@@ -20,6 +20,7 @@ public class Main {
 
 
         List<? extends Token> tokens = cppLexer.getAllTokens();
+
         for(Token token :tokens){
             System.out.println(token.getText());
         }

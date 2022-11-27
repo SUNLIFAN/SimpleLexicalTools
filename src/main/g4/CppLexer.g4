@@ -71,10 +71,13 @@ PRIVATE: 'private';
 // keywords end here
 
 // identifiers
+fragment NAMESPACE: (IDENT '::')*;
+fragment IDENT: ('_' | LETTER)(LETTER | DECIMAL_DIGIT | '_')*;
 
-IDENT: ('_' | LETTER)(LETTER | DECIMAL_DIGIT | '_')*;
 fragment LETTER: [A-Za-z];
 fragment DECIMAL_DIGIT: [0-9];
+
+IDENT_FULL: (NAMESPACE)? IDENT(TEMPLATE)?;
 
 // identifiers end here
 
@@ -157,4 +160,4 @@ MULTILINE_COMMENT: '/*' .*? '*/' -> skip;
 
 fragment DOUBLE_COLON: '::';
 
-TEMPLATE: '<' (IDENT DOUBLE_COLON)*IDENT '>';
+fragment TEMPLATE: '<' (IDENT DOUBLE_COLON)*IDENT '>';

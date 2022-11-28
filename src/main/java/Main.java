@@ -9,6 +9,7 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.Token;
 
+import javax.swing.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -43,6 +44,10 @@ public class Main {
 
             bean.setBuggyCode(buggyCode);
             bean.setFixedCode(fixCode);
+        }
+
+        for(BugFixPairBean bean: beans){
+            System.out.println(bean);
         }
 
         CSVUtils.BeanToCsvConvertor(beans, outputPath);

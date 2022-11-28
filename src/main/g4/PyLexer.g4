@@ -72,6 +72,8 @@ COLONEQUAL:              ':=';
 
 COMMENT: '#'(.)*? NEWLINE -> skip;
 
+ANNOTATION: AT (.)*? NEWLINE -> skip;
+
 fragment LETTER: [a-zA-Z];
 fragment DECIMAL_DIGIT: [0-9];
 fragment OCT_DIGIT: [0-7];
